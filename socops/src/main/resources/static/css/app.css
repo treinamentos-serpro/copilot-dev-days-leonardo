@@ -216,3 +216,272 @@ button:hover { filter: brightness(1.04); }
 #gridContainer {
     filter: drop-shadow(0 18px 28px rgba(2, 6, 23, 0.42));
 }
+
+/* ================================================================
+   CYBERPUNK LOBBY — dark gaming aesthetic
+   ================================================================ */
+
+/* --- fonts --- */
+.brand-wordmark,
+.cyber-headline,
+.cyber-btn,
+.step-num {
+    font-family: 'Orbitron', 'Segment7', monospace;
+}
+
+.cyber-sub,
+.cyber-mission,
+.how-step,
+.status-pill {
+    font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+/* --- lobby background --- */
+.lobby-bg {
+    background:
+        /* subtle hex/grid pattern via repeating gradient */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 39px,
+            rgba(163, 230, 53, 0.035) 39px,
+            rgba(163, 230, 53, 0.035) 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 39px,
+            rgba(163, 230, 53, 0.035) 39px,
+            rgba(163, 230, 53, 0.035) 40px
+        ),
+        radial-gradient(ellipse at 20% 0%, rgba(163, 230, 53, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 100%, rgba(6, 182, 212, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(15, 23, 42, 0) 0%, rgba(2, 8, 18, 0.8) 100%),
+        linear-gradient(160deg, #020812 0%, #050e1c 40%, #020b17 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- scan line --- */
+@keyframes scanLine {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(100vh); }
+}
+.scan-line {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(163, 230, 53, 0.04) 50%,
+        transparent 100%
+    );
+    height: 180px;
+    width: 100%;
+    animation: scanLine 5s linear infinite;
+}
+
+/* --- topbar --- */
+.lobby-topbar {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(163, 230, 53, 0.18);
+    background: rgba(2, 8, 18, 0.72);
+    backdrop-filter: blur(8px);
+}
+
+.brand-wordmark {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: #a3e635;
+    text-shadow: 0 0 10px rgba(163, 230, 53, 0.6);
+}
+
+.status-pill {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 100px;
+    padding: 0.2rem 0.65rem;
+}
+
+/* --- hero headline --- */
+.cyber-headline {
+    font-size: clamp(2.6rem, 12vw, 5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    text-shadow:
+        0 0 12px rgba(163, 230, 53, 0.5),
+        0 0 40px rgba(163, 230, 53, 0.22),
+        0 2px 0 rgba(0,0,0,0.7);
+    animation: glowPulse 3.2s ease-in-out infinite;
+}
+
+.cyber-sub {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6ee7b7;
+    opacity: 0.85;
+}
+
+/* --- mission copy --- */
+.cyber-mission {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 340px;
+}
+
+/* --- bingo preview --- */
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgba(163, 230, 53, 0.35);
+    border-radius: 6px;
+    padding: 4px;
+    background: rgba(2, 8, 18, 0.6);
+    box-shadow:
+        0 0 0 1px rgba(163, 230, 53, 0.08),
+        0 0 28px rgba(163, 230, 53, 0.12),
+        inset 0 0 20px rgba(2, 8, 18, 0.5);
+    animation: borderFlicker 6s ease-in-out infinite;
+}
+
+.preview-cell {
+    border-radius: 3px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.preview-free {
+    background: rgba(163, 230, 53, 0.18) !important;
+    border-color: rgba(163, 230, 53, 0.55) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.52rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #a3e635;
+    text-shadow: 0 0 6px rgba(163, 230, 53, 0.7);
+}
+
+/* --- how-to steps --- */
+.how-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 360px;
+}
+
+.how-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-left: 2px solid rgba(163, 230, 53, 0.5);
+    border-radius: 6px;
+    padding: 0.65rem 1rem;
+}
+
+.step-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #a3e635;
+    opacity: 0.7;
+    flex-shrink: 0;
+    min-width: 2rem;
+    text-shadow: 0 0 8px rgba(163, 230, 53, 0.5);
+}
+
+.step-text {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-family: 'Space Mono', monospace;
+}
+
+/* --- CTA button --- */
+.cyber-btn {
+    position: relative;
+    display: block;
+    background: linear-gradient(135deg, #84cc16 0%, #a3e635 50%, #65a30d 100%);
+    color: #020812;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    padding: 1.1rem 2rem;
+    cursor: pointer;
+    box-shadow:
+        0 0 0 1px rgba(163, 230, 53, 0.4),
+        0 0 20px rgba(163, 230, 53, 0.3),
+        0 4px 24px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.15s ease, transform 0.1s ease, filter 0.15s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.cyber-btn:hover {
+    filter: brightness(1.12);
+    box-shadow:
+        0 0 0 1px rgba(163, 230, 53, 0.7),
+        0 0 36px rgba(163, 230, 53, 0.45),
+        0 6px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(-1px);
+}
+
+.cyber-btn:active {
+    transform: translateY(1px);
+    filter: brightness(0.96);
+}
+
+.cyber-btn:focus-visible {
+    outline: 2px solid #a3e635;
+    outline-offset: 3px;
+}
+
+/* --- lobby main content z-index --- */
+.lobby-bg main {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- responsive: no horizontal overflow --- */
+@media (max-width: 400px) {
+    .preview-grid {
+        width: 175px;
+        height: 175px;
+    }
+    .cyber-headline {
+        font-size: 2.4rem;
+    }
+}
