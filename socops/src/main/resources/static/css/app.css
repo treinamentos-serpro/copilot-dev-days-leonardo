@@ -19,6 +19,16 @@
     --success-soft: rgba(34, 197, 94, 0.18);
     --warning: #fbbf24;
     --warning-soft: rgba(251, 191, 36, 0.19);
+
+    /* lobby editorial palette */
+    --lobby-ink:      #1b1108;
+    --lobby-ink-dark: #110c04;
+    --ink-white:      #f5ede0;
+    --ink-soft:       #c9b99a;
+    --ink-muted:      #8a7860;
+    --coral:          #d4623a;
+    --font-display:   Georgia, "Times New Roman", serif;
+    --font-body:      "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 html,
@@ -206,7 +216,6 @@ button:hover { filter: brightness(1.04); }
 }
 
 /* ── additional dark theme polish ─────────────────────────────── */
-#lobbyView,
 #activeView {
     background:
         radial-gradient(circle at top, rgba(139, 92, 246, 0.14), transparent 32%),
