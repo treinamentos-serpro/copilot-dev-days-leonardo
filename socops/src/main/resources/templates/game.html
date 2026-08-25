@@ -17,26 +17,68 @@
 <!-- ============================================================= -->
 <!--  LOBBY — visible before a game starts                          -->
 <!-- ============================================================= -->
-<div id="lobbyView" class="flex flex-col items-center justify-center min-h-full p-6 bg-page">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2" style="letter-spacing: 0.08em;">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8" style="letter-spacing: 0.18em; text-transform: uppercase;">Social Bingo</p>
+<main id="lobbyView" class="lobby-shell flex items-center justify-center min-h-full p-6">
+    <section class="lobby-stage lobby-reveal lobby-delay-1">
+        <section class="lobby-panel lobby-header lobby-reveal lobby-delay-2" aria-labelledby="lobbyTitle">
+            <h1 id="lobbyTitle" class="lobby-title">SOC OPS</h1>
+            <h2 class="lobby-badge">SOCIAL BINGO</h2>
+        </section>
 
-        <div class="bg-panel rounded-lg p-6 shadow-xl border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
-        </div>
+        <section class="lobby-panel lobby-preview lobby-reveal lobby-delay-3" aria-hidden="true">
+            <div class="lobby-preview-grid">
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-hit"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-mint"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-yellow"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-hit"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-mint"></span>
+                <span class="lobby-preview-cell lobby-preview-free">FREE</span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-yellow"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-hit"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-mint"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-yellow"></span>
+                <span class="lobby-preview-cell"></span>
+                <span class="lobby-preview-cell lobby-preview-cell-hit"></span>
+            </div>
+        </section>
+
+        <section class="lobby-panel lobby-steps lobby-reveal lobby-delay-4" aria-labelledby="lobbyHowToTitle">
+            <h2 id="lobbyHowToTitle" class="lobby-steps-title">How to play</h2>
+            <ol class="lobby-steps-list">
+                <li class="lobby-step">
+                    <span class="lobby-step-number" aria-hidden="true">①</span>
+                    <span>Find someone</span>
+                </li>
+                <li class="lobby-step">
+                    <span class="lobby-step-number" aria-hidden="true">②</span>
+                    <span>Mark the square</span>
+                </li>
+                <li class="lobby-step">
+                    <span class="lobby-step-number" aria-hidden="true">③</span>
+                    <span>Get 5 in a row</span>
+                </li>
+            </ol>
+        </section>
 
         <button onclick="launchGame()"
-                class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg accent-active transition-colors shadow-xl">
-            Start Game
+                class="lobby-cta lobby-reveal lobby-delay-4"
+                aria-label="Start a new social bingo game">
+            INSERT COIN ▶ START GAME
         </button>
-    </div>
-</div>
+    </section>
+</main>
 
 <!-- ============================================================= -->
 <!--  ACTIVE GAME — board, header, optional bingo banner            -->
